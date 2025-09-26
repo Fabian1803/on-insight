@@ -14,6 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://on-insight.vercel.app'),
   title: "O(n) Insight - Analizador de Complejidad Algorítmica",
   description: "Análisis inteligente de complejidad Big-O para código Java en tiempo real. Detecta automáticamente algoritmos como MergeSort, QuickSort, Fibonacci y más con visualización interactiva.",
   keywords: [
@@ -72,18 +73,6 @@ export const metadata: Metadata = {
     description: "Análisis inteligente de complejidad Big-O para código Java en tiempo real con visualización interactiva.",
     images: ["/capture.png"],
   },
-  
-  // Configuración para móviles
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-    userScalable: false,
-  },
-  
-  // Color del tema para PWA y navegadores
-  themeColor: "#1E1E1E",
-  colorScheme: "dark",
   
   // Configuración adicional para móviles
   appleWebApp: {

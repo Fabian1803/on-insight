@@ -39,13 +39,9 @@ export function analyzeComplexity(code: string): ComplexityResult {
   // Contar todos los loops
   const allForLoops = (code.match(/for\s*\(/g) || []).length;
   const whileLoops = (code.match(/while\s*\(/g) || []).length;
-  const enhancedForLoops = (code.match(/for\s*\([^:]*:[^)]*\)/g) || []).length;
 
   // Loops simples = todos los loops - (loops anidados * 2)
   const singleLoops = allForLoops + whileLoops - (nestedLoops * 2);
-
-  // Detectar llamadas a métodos con complejidad conocida dentro de loops
-  const methodCallsInLoop = code.match(/for\s*\([^{]*\{[^{}]*(?:[^{}]*\{[^{}]*\}[^{}]*)*[^{}]*\w+\.\w+\([^)]*\)[^{}]*(?:\/\/[^\n]*O\([^)]+\))?[^{}]*\}/g);
 
   // Buscar comentarios que indiquen complejidad
   const complexityComments = code.match(/\/\/[^O]*O\([^)]+\)/g) || [];

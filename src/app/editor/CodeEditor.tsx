@@ -1,8 +1,6 @@
 "use client";
 import dynamic from "next/dynamic";
-import { editor } from "monaco-editor";
 
-// Import dinámico porque Monaco no funciona en SSR
 const MonacoEditor = dynamic(() => import("@monaco-editor/react"), { ssr: false });
 
 interface CodeEditorProps {

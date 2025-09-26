@@ -1,6 +1,6 @@
 "use client";
 import Image from 'next/image'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useMemo } from 'react'
 
 interface SplashProps {
   onLoadingComplete: () => void;
@@ -8,19 +8,17 @@ interface SplashProps {
 
 export default function Splash({ onLoadingComplete }: SplashProps) {
   const [currentStep, setCurrentStep] = useState(0);
-  const [progress, setProgress] = useState(0);
 
-  const loadingSteps = [
+  const loadingSteps = useMemo(() => [
     { text: "Inicializando O(n) Insight...", duration: 800 },
     { text: "Cargando editor de código...", duration: 600 },
     { text: "Preparando análisis de complejidad...", duration: 700 },
     { text: "Configurando visualizaciones...", duration: 500 },
     { text: "¡Listo para analizar!", duration: 400 }
-  ];
+  ], []);
 
   useEffect(() => {
     let timeoutId: NodeJS.Timeout;
-    let progressInterval: NodeJS.Timeout;
 
     const runStep = (stepIndex: number) => {
       if (stepIndex >= loadingSteps.length) {
@@ -29,21 +27,8 @@ export default function Splash({ onLoadingComplete }: SplashProps) {
       }
 
       setCurrentStep(stepIndex);
-      setProgress(0);
-
-      // Simular progreso gradual
-      progressInterval = setInterval(() => {
-        setProgress(prev => {
-          if (prev >= 100) {
-            clearInterval(progressInterval);
-            return 100;
-          }
-          return prev + 2;
-        });
-      }, loadingSteps[stepIndex].duration / 50);
 
       timeoutId = setTimeout(() => {
-        clearInterval(progressInterval);
         runStep(stepIndex + 1);
       }, loadingSteps[stepIndex].duration);
     };
@@ -52,9 +37,8 @@ export default function Splash({ onLoadingComplete }: SplashProps) {
 
     return () => {
       clearTimeout(timeoutId);
-      clearInterval(progressInterval);
     };
-  }, [onLoadingComplete]);
+  }, [onLoadingComplete, loadingSteps]);
 
   return (
     <div className='absolute bg-gradient-to-br from-[#1E1E1E] via-[#2A2A2A] to-[#1E1E1E] h-full w-full z-50 justify-center items-center flex flex-col'>

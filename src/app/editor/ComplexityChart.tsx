@@ -9,19 +9,12 @@ interface ComplexityChartProps {
 }
 
 export default function ComplexityChart({ dominantComplexity = "On2" }: ComplexityChartProps) {
-  // Generate data and complexity info
   const data = generateComplexityData();
   const complexityInfo = getComplexityInfo(dominantComplexity);
-  
-  // Determine if it's an extreme complexity type
   const isFactorial = dominantComplexity === "Onfactorial";
   const isExponential = dominantComplexity === "Oexponential";
   const isExtremeComplexity = isFactorial || isExponential;
-  
-  // Get responsive dimensions
   const dimensions = useChartDimensions(isExtremeComplexity);
-  
-  // Use less data points for extreme complexities for better visualization
   const displayData = isExtremeComplexity ? data.slice(0, 6) : data;
 
   return (
