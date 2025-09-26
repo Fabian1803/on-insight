@@ -83,9 +83,9 @@ export default function Splash({ onLoadingComplete }: SplashProps) {
         <Image 
           src="/logo.png" 
           alt="O(n) Insight Logo" 
-          width="160" 
-          height="128" 
-          className='animate-pulse drop-shadow-2xl sm:w-[200px] sm:h-[160px]' 
+          width="200" 
+          height="160" 
+          className='animate-pulse drop-shadow-2xl' 
         />
         <div className="absolute -inset-2 sm:-inset-4 bg-blue-500/20 blur-xl rounded-full animate-ping"></div>
       </div>
