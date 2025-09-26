@@ -15,7 +15,7 @@ export default function CodeEditor({
   setCode,
 }: CodeEditorProps) {
   return (
-    <div className="w-full h-full min-h-[400px] sm:min-h-[450px] xl:min-h-0 flex flex-col bg-[#1E1E1E]">
+    <div className="w-full h-full xl:min-h-0 flex flex-col bg-[#1E1E1E]">
       {/* Header del editor */}
       <div className="flex-shrink-0 bg-[#2D2D30] border-b border-[#303038] px-4 py-2">
         <h3 className="text-white text-sm font-medium">
@@ -26,6 +26,7 @@ export default function CodeEditor({
       {/* Editor container */}
       <div className="flex-1 min-h-0">
         <MonacoEditor
+        className="min-h-[400px] sm:min-h-[450px]"
           height="100%"
           defaultLanguage={language}
           value={code}
