@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://on-insight.vercel.app/sitemap.xml
+
+# Archivos importantes para crawlers
+Allow: /capture.png
+Allow: /logo.png
+Allow: /manifest.json
+
+# Optimización de crawling
+Crawl-delay: 1

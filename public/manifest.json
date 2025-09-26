@@ -1,0 +1,42 @@
+{
+  "name": "O(n) Insight - Analizador de Complejidad Algorítmica",
+  "short_name": "O(n) Insight",
+  "description": "Análisis inteligente de complejidad Big-O para código Java en tiempo real",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1E1E1E",
+  "theme_color": "#1E1E1E",
+  "orientation": "portrait-primary",
+  "categories": ["education", "developer", "productivity"],
+  "lang": "es",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/logo.png", 
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/capture.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "label": "Interfaz principal del analizador"
+    }
+  ],
+  "features": [
+    "Análisis de complejidad en tiempo real",
+    "Visualización interactiva de algoritmos",
+    "Editor Monaco integrado",
+    "Renderizado matemático LaTeX"
+  ],
+  "categories_custom": ["algorithm-analysis", "education", "coding-tools"]
+}

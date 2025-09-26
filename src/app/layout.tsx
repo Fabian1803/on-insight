@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import JsonLd from "./components/JsonLd";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,9 +14,103 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "O(n) Insight",
-  description: "Análisis de complejidad algorítmica para código Java",
-  viewport: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no",
+  title: "O(n) Insight - Analizador de Complejidad Algorítmica",
+  description: "Análisis inteligente de complejidad Big-O para código Java en tiempo real. Detecta automáticamente algoritmos como MergeSort, QuickSort, Fibonacci y más con visualización interactiva.",
+  keywords: [
+    "algoritmos",
+    "complejidad algorítmica", 
+    "Big-O",
+    "análisis de código",
+    "Java",
+    "programación",
+    "visualización",
+    "MergeSort",
+    "QuickSort",
+    "Fibonacci",
+    "educación",
+    "desarrollo de software"
+  ],
+  authors: [{ name: "O(n) Insight Team" }],
+  creator: "O(n) Insight",
+  publisher: "O(n) Insight",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  
+  // Open Graph para redes sociales
+  openGraph: {
+    type: "website",
+    locale: "es_ES",
+    url: "https://on-insight.vercel.app",
+    title: "O(n) Insight - Analizador de Complejidad Algorítmica",
+    description: "Análisis inteligente de complejidad Big-O para código Java en tiempo real. Detecta automáticamente algoritmos con visualización interactiva.",
+    siteName: "O(n) Insight",
+    images: [
+      {
+        url: "/capture.png",
+        width: 1200,
+        height: 630,
+        alt: "O(n) Insight - Interfaz del analizador de complejidad algorítmica",
+      },
+    ],
+  },
+  
+  // Twitter Card
+  twitter: {
+    card: "summary_large_image",
+    site: "@on_insight",
+    creator: "@on_insight", 
+    title: "O(n) Insight - Analizador de Complejidad Algorítmica",
+    description: "Análisis inteligente de complejidad Big-O para código Java en tiempo real con visualización interactiva.",
+    images: ["/capture.png"],
+  },
+  
+  // Configuración para móviles
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+  },
+  
+  // Color del tema para PWA y navegadores
+  themeColor: "#1E1E1E",
+  colorScheme: "dark",
+  
+  // Configuración adicional para móviles
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "O(n) Insight",
+  },
+  
+  // Manifest para PWA
+  manifest: "/manifest.json",
+  
+  // Icons
+  icons: {
+    icon: [
+      { url: "/logo.png", sizes: "32x32", type: "image/png" },
+      { url: "/logo.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: [
+      { url: "/logo.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: ["/logo.png"],
+  },
+  
+  // Configuración adicional
+  category: "education",
+  classification: "Educational Tool",
+  referrer: "origin-when-cross-origin",
 };
 
 export default function RootLayout({
@@ -24,10 +119,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
+      <head>
+        {/* Meta tags adicionales para SEO */}
+        <meta name="theme-color" content="#1E1E1E" />
+        <meta name="msapplication-TileColor" content="#1E1E1E" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        
+        {/* Preload de recursos críticos */}
+        <link rel="preload" href="/logo.png" as="image" />
+        <link rel="preload" href="/capture.png" as="image" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <JsonLd />
         {children}
       </body>
     </html>

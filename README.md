@@ -1,4 +1,4 @@
-# 🚀 O(n) Insight - Analizador de Complejidad Algorítmica
+# O(n) Insight - Analizador de Complejidad Algorítmica
 
 <div align="center">
 
@@ -107,7 +107,7 @@ El analizador puede identificar y calcular la complejidad de:
 - Problema del viajante (fuerza bruta)
 - Algoritmos de backtracking completos
 
-## 🚀 Instalación y Uso
+## Instalación y Uso
 
 ### Prerrequisitos
 - Node.js 18+ 
