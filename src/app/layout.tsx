@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     siteName: "O(n) Insight",
     images: [
       {
-        url: "/capture.png",
+        url: "public/capture.png",
         width: 1200,
         height: 630,
         alt: "O(n) Insight - Interfaz del analizador de complejidad algorítmica",
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     creator: "@on_insight", 
     title: "O(n) Insight - Analizador de Complejidad Algorítmica",
     description: "Análisis inteligente de complejidad Big-O para código Java en tiempo real con visualización interactiva.",
-    images: ["/capture.png"],
+    images: ["public/capture.png"],
   },
   
   // Configuración adicional para móviles
