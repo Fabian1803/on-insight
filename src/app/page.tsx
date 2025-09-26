@@ -1,24 +1,17 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-
-// Components
 import CodeEditor from "./editor/CodeEditor";
 import MathFormula from "./editor/MathFormula";
 import ComplexityChart from "./editor/ComplexityChart";
 import Splash from "./component/splash";
-
-// Hooks
 import { useComplexityAnalysis } from "@/hooks/useComplexityAnalysis";
 import { useComponentLoading } from "@/hooks/useComponentLoading";
 import { useWindowResize } from "@/hooks/useWindowResize";
 
 export default function Home() {
-  // State management
   const [code, setCode] = useState("");
   const [showSplash, setShowSplash] = useState(true);
-  
-  // Custom hooks
   const complexity = useComplexityAnalysis(code);
   const componentsLoaded = useComponentLoading();
   const forceUpdate = useWindowResize();
@@ -46,7 +39,7 @@ export default function Home() {
         {/* Main content responsivo */}
         <div className="flex-1 flex flex-col xl:flex-row min-h-0 gap-0">
           {/* Editor section */}
-          <div className="flex-1 flex flex-col min-h-[250px] sm:min-h-[300px] xl:min-h-0 xl:max-w-[50%]">
+          <div className="flex-1 flex flex-col min-h-[400px] sm:min-h-[450px] xl:min-h-0 xl:max-w-[50%]">
             {componentsLoaded.editor && (
               <CodeEditor language="java" code={code} setCode={setCode} />
             )}
@@ -56,7 +49,7 @@ export default function Home() {
           <div className="flex-1 flex flex-col min-h-0 xl:border-l border-[#303038] xl:max-w-[50%]">
             <div className="flex-1 flex flex-col overflow-hidden">
               {componentsLoaded.chart && (
-                <div className="flex-1 p-3 sm:p-4 overflow-auto min-h-[200px] sm:min-h-[250px]">
+                <div className="flex-1 p-3 sm:p-4 overflow-auto min-h-[300px] sm:min-h-[400px]">
                   <ComplexityChart key={forceUpdate} dominantComplexity={complexity.dominantComplexity} />
                 </div>
               )}

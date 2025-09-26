@@ -18,11 +18,41 @@ export default function Splash({ onLoadingComplete }: SplashProps) {
   ], []);
 
   useEffect(() => {
+    // Prevenir scroll del body y html usando clases CSS
+    document.body.classList.add('no-scroll');
+    document.documentElement.classList.add('no-scroll');
+    
+    // Funciones para prevenir eventos de scroll
+    const preventDefault = (e: Event) => {
+      e.preventDefault();
+    };
+
+    const preventDefaultForScrollKeys = (e: KeyboardEvent) => {
+      const scrollKeys = [32, 33, 34, 35, 36, 37, 38, 39, 40];
+      if (scrollKeys.includes(e.keyCode)) {
+        preventDefault(e);
+        return false;
+      }
+    };
+
+    // Agregar event listeners para prevenir scroll
+    document.addEventListener('wheel', preventDefault, { passive: false });
+    document.addEventListener('touchmove', preventDefault, { passive: false });
+    document.addEventListener('keydown', preventDefaultForScrollKeys, false);
+    
     let timeoutId: NodeJS.Timeout;
 
     const runStep = (stepIndex: number) => {
       if (stepIndex >= loadingSteps.length) {
-        setTimeout(onLoadingComplete, 500);
+        setTimeout(() => {
+          // Restaurar scroll y remover event listeners
+          document.body.classList.remove('no-scroll');
+          document.documentElement.classList.remove('no-scroll');
+          document.removeEventListener('wheel', preventDefault);
+          document.removeEventListener('touchmove', preventDefault);
+          document.removeEventListener('keydown', preventDefaultForScrollKeys);
+          onLoadingComplete();
+        }, 500);
         return;
       }
 
@@ -37,28 +67,34 @@ export default function Splash({ onLoadingComplete }: SplashProps) {
 
     return () => {
       clearTimeout(timeoutId);
+      // Cleanup: restaurar scroll en caso de que el componente se desmonte
+      document.body.classList.remove('no-scroll');
+      document.documentElement.classList.remove('no-scroll');
+      document.removeEventListener('wheel', preventDefault);
+      document.removeEventListener('touchmove', preventDefault);
+      document.removeEventListener('keydown', preventDefaultForScrollKeys);
     };
   }, [onLoadingComplete, loadingSteps]);
 
   return (
-    <div className='absolute bg-gradient-to-br from-[#1E1E1E] via-[#2A2A2A] to-[#1E1E1E] h-full w-full z-50 justify-center items-center flex flex-col'>
+    <div className='fixed inset-0 bg-gradient-to-br from-[#1E1E1E] via-[#2A2A2A] to-[#1E1E1E] z-50 justify-center items-center flex flex-col overflow-hidden'>
       {/* Logo con animación */}
-      <div className="mb-8 relative">
+      <div className="mb-4 sm:mb-8 relative">
         <Image 
           src="/logo.png" 
           alt="O(n) Insight Logo" 
-          width="200" 
-          height="160" 
-          className='animate-pulse drop-shadow-2xl' 
+          width="160" 
+          height="128" 
+          className='animate-pulse drop-shadow-2xl sm:w-[200px] sm:h-[160px]' 
         />
-        <div className="absolute -inset-4 bg-blue-500/20 blur-xl rounded-full animate-ping"></div>
+        <div className="absolute -inset-2 sm:-inset-4 bg-blue-500/20 blur-xl rounded-full animate-ping"></div>
       </div>
-      <p className="text-gray-400 text-lg mb-8 animate-fade-in-delay">
+      <p className="text-gray-400 text-base sm:text-lg mb-4 sm:mb-8 animate-fade-in-delay text-center px-4">
         Analizador de Complejidad Algorítmica
       </p>
 
       {/* Progress indicator */}
-      <div className="w-80 mb-4">
+      <div className="w-64 sm:w-80 mb-4 px-4">
         <div className="flex justify-between text-xs text-gray-400 mb-2">
           <span>Cargando...</span>
           <span>{Math.round((currentStep / loadingSteps.length) * 100)}%</span>
@@ -74,8 +110,8 @@ export default function Splash({ onLoadingComplete }: SplashProps) {
       </div>
 
       {/* Current step */}
-      <div className="text-center">
-        <p className="text-white text-sm font-medium animate-bounce">
+      <div className="text-center px-4 max-w-sm">
+        <p className="text-white text-xs sm:text-sm font-medium animate-bounce">
           {loadingSteps[currentStep]?.text}
         </p>
         <div className="flex justify-center mt-4 space-x-1">

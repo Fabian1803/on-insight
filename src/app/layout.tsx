@@ -117,7 +117,6 @@ export default function RootLayout({
         
         {/* Preload de recursos críticos */}
         <link rel="preload" href="/logo.png" as="image" />
-        <link rel="preload" href="/capture.png" as="image" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
