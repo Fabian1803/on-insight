@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://on-insight.vercel.app'),
+  metadataBase: new URL('https://on-insight.netlify.app/'),
   title: "O(n) Insight - Analizador de Complejidad Algorítmica",
   description: "Análisis inteligente de complejidad Big-O para código Java en tiempo real. Detecta automáticamente algoritmos como MergeSort, QuickSort, Fibonacci y más con visualización interactiva.",
   keywords: [
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
     "educación",
     "desarrollo de software"
   ],
-  authors: [{ name: "O(n) Insight Team" }],
-  creator: "O(n) Insight",
-  publisher: "O(n) Insight",
+  authors: [{ name: "Fabian" }],
+  creator: "Fabian",
+  publisher: "Fabian",
   robots: {
     index: true,
     follow: true,
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "es_ES",
-    url: "https://on-insight.vercel.app",
+    url: "https://on-insight.netlify.app/",
     title: "O(n) Insight - Analizador de Complejidad Algorítmica",
     description: "Análisis inteligente de complejidad Big-O para código Java en tiempo real. Detecta automáticamente algoritmos con visualización interactiva.",
     siteName: "O(n) Insight",
