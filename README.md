@@ -13,15 +13,15 @@
 
 </div>
 
-## ✨ Características
+## Características
 
-- **🔍 Análisis Inteligente**: Detecta automáticamente patrones algorítmicos y calcula la complejidad Big-O
-- **📊 Visualización Interactiva**: Gráficos dinámicos que muestran el crecimiento de diferentes complejidades
-- **⚡ Tiempo Real**: Análisis con debounce de 3 segundos para una experiencia fluida
-- **🧮 Renderizado Matemático**: Fórmulas LaTeX profesionales con KaTeX
-- **📱 Diseño Responsivo**: Optimizado para desktop, tablet y móvil
-- **🎯 Algoritmos Específicos**: Reconoce MergeSort, QuickSort, Fibonacci, BinarySearch y más
-- **🌙 Tema Oscuro**: Interfaz moderna con tema VS Code
+- **Análisis Inteligente**: Detecta automáticamente patrones algorítmicos y calcula la complejidad Big-O
+- **Visualización Interactiva**: Gráficos dinámicos que muestran el crecimiento de diferentes complejidades
+- **Tiempo Real**: Análisis con debounce de 3 segundos para una experiencia fluida
+- **Renderizado Matemático**: Fórmulas LaTeX profesionales con KaTeX
+- **Diseño Responsivo**: Optimizado para desktop, tablet y móvil
+- **Algoritmos Específicos**: Reconoce MergeSort, QuickSort, Fibonacci, BinarySearch y más
+- **Tema Oscuro**: Interfaz moderna con tema VS Code
 
 ## 🛠️ Tecnologías Utilizadas
 
@@ -41,7 +41,7 @@
 - **Separación de Responsabilidades** - Lógica de negocio separada de la vista
 - **Componentes Modulares** - Arquitectura escalable y mantenible
 
-## 🏗️ Arquitectura del Proyecto
+## Arquitectura del Proyecto
 
 ```
 src/
@@ -69,7 +69,7 @@ src/
         └── [otros componentes] # Componentes modulares
 ```
 
-## 🧠 Algoritmos Detectados
+## Algoritmos Detectados
 
 El analizador puede identificar y calcular la complejidad de:
 
@@ -144,14 +144,14 @@ pnpm dev
 http://localhost:3000
 ```
 
-## 🎮 Cómo Usar
+## Cómo Usar
 
 1. **Escribir Código**: Ingresa tu código Java en el editor Monaco
 2. **Análisis Automático**: Espera 3 segundos y el análisis se ejecutará automáticamente
 3. **Ver Resultados**: 
-   - 📊 **Gráfico**: Visualización de la complejidad detectada
-   - 🧮 **Fórmulas**: Expresión matemática y notación Big-O en LaTeX
-   - 📝 **Información**: Descripción detallada y ejemplos
+   - **Gráfico**: Visualización de la complejidad detectada
+   - **Fórmulas**: Expresión matemática y notación Big-O en LaTeX
+   - **Información**: Descripción detallada y ejemplos
 
 ## 🧪 Ejemplos de Código
 
@@ -185,7 +185,7 @@ public int linearSearch(int[] arr, int target) {
 }
 ```
 
-## 🔧 Scripts Disponibles
+## Scripts Disponibles
 
 ```bash
 # Desarrollo
@@ -200,7 +200,7 @@ npm run lint         # Linter ESLint
 npm run type-check   # Verificación de tipos TypeScript
 ```
 
-## 🎨 Características Técnicas
+## Características Técnicas
 
 ### Performance
 - **Debounce de 3s** - Evita análisis innecesarios
@@ -216,12 +216,12 @@ npm run type-check   # Verificación de tipos TypeScript
 
 ## 📱 Compatibilidad
 
-- ✅ **Desktop**: Chrome, Firefox, Safari, Edge
-- ✅ **Tablet**: iPad, Android tablets  
-- ✅ **Móvil**: iOS Safari, Chrome Mobile
-- ✅ **Responsive**: Breakpoints optimizados
+- **Desktop**: Chrome, Firefox, Safari, Edge
+- **Tablet**: iPad, Android tablets  
+- **Móvil**: iOS Safari, Chrome Mobile
+- **Responsive**: Breakpoints optimizados
 
-## 🤝 Contribuciones
+## Contribuciones
 
 Las contribuciones son bienvenidas! Por favor:
 
@@ -231,11 +231,11 @@ Las contribuciones son bienvenidas! Por favor:
 4. Push a la rama (`git push origin feature/AmazingFeature`)
 5. Abre un Pull Request
 
-## 📄 Licencia
+## Licencia
 
 Este proyecto está bajo la Licencia MIT. Ver `LICENSE` para más detalles.
 
-## 🙏 Agradecimientos
+## Agradecimientos
 
 - **Monaco Editor** - Por el increíble editor de código
 - **Recharts** - Por las visualizaciones elegantes
@@ -245,10 +245,3 @@ Este proyecto está bajo la Licencia MIT. Ver `LICENSE` para más detalles.
 
 ---
 
-<div align="center">
-
-**¿Te gustó el proyecto? ¡Dale una ⭐ en GitHub!**
-
-Desarrollado con ❤️ para la comunidad de desarrolladores
-
-</div>
